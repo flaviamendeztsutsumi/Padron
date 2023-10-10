@@ -1,5 +1,7 @@
 package dominio;
 import presentacion.*;
+import java.io.Scanner;
+import presentacion.*;
 import java.io.*;
 import java.util.*;
 public class OficinaPadron{
@@ -7,7 +9,7 @@ public class OficinaPadron{
 
 	public void annadir(Habitante habitante){
 		habitantesPadron.add(habitante);
-		volcarContactos();
+	
 	}
 
 	public ArrayList getHabitantesPadron(){
@@ -40,7 +42,7 @@ public class OficinaPadron{
 		cargarHabitantes();
 	}
 
-	public void volcarContactos(){
+	public void volcar(){
 		try{
 			FileWriter fw = new FileWriter("padron.csv");
 			for(Habitante habitante : habitantesPadron){
@@ -50,7 +52,7 @@ public class OficinaPadron{
 		}catch(IOException ex){
 			System.err.println(ex);
 		}
-}
+     }
 
 
 }
